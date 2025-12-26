@@ -5,22 +5,29 @@ return {
     cmd = { "ConformInfo" },
     keys = {
       {
-        "<leader>f",
+        "<leader>cf",
         function()
           require("conform").format({ async = true, lsp_fallback = true })
         end,
-        mode = "",
-        desc = "Format buffer",
+        mode = { "n", "v" },
+        desc = "Format buffer or selection",
       },
     },
     opts = {
       formatters_by_ft = {
         lua = { "stylua" },
-        go = { "gofumpt", "goimports" },
+        go = { "gofumpt", "goimports-reviser", "golines" },
       },
-      format_on_save = {
-        timeout_ms = 500,
-        lsp_fallback = true,
+      format_on_save = function(bufnr)
+        return {
+          timeout_ms = 500,
+          lsp_fallback = true,
+        }
+      end,
+      formatters = {
+        shfmt = {
+          prepend_args = { "-i", "2" },
+        },
       },
     },
   },
