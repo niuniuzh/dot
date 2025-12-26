@@ -1,6 +1,7 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    version = "0.9.3", -- 锁定版本以修复 'configs' 模块缺失问题
     build = ":TSUpdate",
     event = { "BufReadPost", "BufNewFile" },
     config = function()
@@ -13,9 +14,6 @@ return {
           enable = true,
         },
         indent = {
-          enable = true,
-        },
-        autotag = {
           enable = true,
         },
       })
