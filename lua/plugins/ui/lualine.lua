@@ -23,7 +23,7 @@ return {
 
     require("lualine").setup({
       options = {
-        theme = "tokyonight",
+        theme = "solarized",
         globalstatus = true,
         -- 使用标准的 Nerd Fonts 分隔符
         component_separators = { left = '|', right = '|'},
