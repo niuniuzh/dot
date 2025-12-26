@@ -22,7 +22,7 @@ opt.wrap = false
 
 -- System
 opt.updatetime = 250
-opt.timeoutlen = 300
+opt.timeoutlen = 600
 opt.clipboard = "unnamedplus"
 opt.splitright = true
 opt.splitbelow = true
