@@ -26,3 +26,8 @@ opt.timeoutlen = 600
 opt.clipboard = "unnamedplus"
 opt.splitright = true
 opt.splitbelow = true
+
+-- undo 持久化
+opt.undofile = true
+opt.undolevels = 10000
+opt.undoreload = 10000

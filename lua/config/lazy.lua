@@ -18,6 +18,7 @@ require("lazy").setup({
   { import = "plugins.theme" },
   { import = "plugins.treesitter" },
   { import = "plugins.ui" },
+  { import = "plugins.editor" },
 }, {
   change_detection = {
     notify = false,
