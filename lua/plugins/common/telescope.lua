@@ -13,6 +13,7 @@ return {
       "nvim-telescope/telescope-ui-select.nvim",
       -- [图标] 大部分人都喜欢的文件图标支持
       "nvim-tree/nvim-web-devicons",
+      "ahmedkhalf/project.nvim", 
     },
     config = function()
       local telescope = require("telescope")
@@ -73,6 +74,7 @@ return {
       -- [加载扩展] 必须显式加载已安装的扩展
       pcall(telescope.load_extension, "fzf")
       pcall(telescope.load_extension, "ui-select")
+      pcall(telescope.load_extension, "projects") -- [新增] 加载项目管理扩展
 
       -- ==========================================
       --                快捷键配置
@@ -82,6 +84,9 @@ return {
       vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[Telescope] 查找文件" })
       vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "[Telescope] 历史文件 (Recent)" })
       vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[Telescope] 切换缓冲区" })
+      vim.keymap.set("n", "<leader>fp", function() -- [新增]
+        telescope.extensions.projects.projects()
+      end, { desc = "[Telescope] 查找项目 (Projects)" })
       
       -- [全局搜索]
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[Telescope] 全局搜索 (Live Grep)" })
